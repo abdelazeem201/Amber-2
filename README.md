@@ -26,4 +26,6 @@ replacement policy. The cache can have 2, 3, 4 or 8 ways and each way is 4kB.
 output in 34 clock cycles using the Booth algorithm. This is a small and slow
 multiplier implementation.
 • Little endian only, i.e. Byte 0 is stored in bits 7:0 and byte 3 in bits 31:24.
+
+
 The following diagram shows the data flow through the 3-stage core.
