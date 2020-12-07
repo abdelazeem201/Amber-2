@@ -18,7 +18,7 @@ stalled either when a cache miss occurs, or when the core performs a wishbone
 access.
 
 ## 1.1 Amber 23 Features
-• 3-stage pipeline.
+• 3-stage pipeline. 
 • 32-bit Wishbone system bus.
 • Unified instruction and data cache, with write through and a read-miss
 replacement policy. The cache can have 2, 3, 4 or 8 ways and each way is 4kB.
