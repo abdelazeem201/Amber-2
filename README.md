@@ -35,4 +35,32 @@ multiplier implementation.
 The following diagram shows the data flow through the 3-stage core.
 
 ![Figure 1 - Amber 23 Core pipeline stages]
-<img scr="Figure 1.PNG">
+
+
+## 2 Amber 23 Pipeline Architecture
+The Amber 2 core has a 3-stage pipeline architecture. The best way to think of the
+pipeline structure is of a circle. There is no start or end point. The output from each
+stage is registered and fed into the next stage. The three stages are;
+
+• Fetch – The cache tag and data RAMs receive an unregistered version of the
+address output by the execution stage. The registered version of the address is
+compared to the tag RAM outputs one cycle later to decide if the cache hits or
+misses. If the cache misses, then the pipeline is stalled while the instruction is
+fetched from either boot memory or main memory via the Wishbone bus. The
+cache always does 4-word reads so a complete cache line gets filled. In the
+case of a cache hit, the output from the cache data RAM goes to the decode
+stage. This can either be an instruction or data word.
+
+• Decode - The instruction is received from the fetch stage and registered. One
+cycle later it is decoded and the datapath control signals prepared for the next
+cycle. This stage contains a state machine that handles multi-cycle instructions
+and interrupts.
+
+• Execute – The control signals from the decode stage are registered and passed
+into the execute stage, along with any read data from the fetch stage. The
+operands are read from the register bank, shifted, combined in the ALU and the
+result written back. The next address for the fetch stage is generated.
+The following diagram shows the datapath through the three stages in detail. This
+diagram closely corresponds to the Verilog implementation. Some details, like the
+wishbone interface and coprocessor #15 have been left out so as not to overload the
+diagram completely
