@@ -6,6 +6,7 @@ set is supported because it is not covered by patents so can be implemented with
 license from ARM. The Amber project provides a complete embedded system
 incorporating the Amber core and a number of peripherals, including UARTs, timers
 and an Ethernet MAC.
+
 There are two versions of the core provided in the Amber project. The Amber 23 has
 a 3-stage pipeline, a unified instruction & data cache, a Wishbone interface, and is
 capable of 0.8 DMIPS per MHz. 
