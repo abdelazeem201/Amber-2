@@ -34,4 +34,4 @@ multiplier implementation.
 
 The following diagram shows the data flow through the 3-stage core.
 
-![](Figure 1.PNG)
+![Figure 1 - Amber 23 Core pipeline stages]<img scr="Figure 1.PNG">
