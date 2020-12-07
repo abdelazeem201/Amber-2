@@ -19,12 +19,16 @@ access.
 
 ## 1.1 Amber 23 Features
 • 3-stage pipeline. 
+
 • 32-bit Wishbone system bus.
+
 • Unified instruction and data cache, with write through and a read-miss
 replacement policy. The cache can have 2, 3, 4 or 8 ways and each way is 4kB.
+
 • Multiply and multiply-accumulate operations with 32-bit inputs and 32-bit
 output in 34 clock cycles using the Booth algorithm. This is a small and slow
 multiplier implementation.
+
 • Little endian only, i.e. Byte 0 is stored in bits 7:0 and byte 3 in bits 31:24.
 
 
